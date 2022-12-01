@@ -3,7 +3,7 @@ title: SOLD! Selling Our Piano
 description: We’ve inherited my mom’s piano, so we need to offload our current piano. For those interested, here are some specifics & photos.
 isPublished: true
 featuredImage: {
-  url: /images/selling-our-piano/IMG_6393.jpeg,
+  url: /images/static/selling-our-piano/IMG_6393.jpeg,
   alt: The piano we're selling
 }
 publishDate: 2020/06/01
