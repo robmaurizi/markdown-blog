@@ -83,7 +83,7 @@ const SkillsBlock = ({skills}) => {
           const skillStyle = `${(skill.score / 10) * 100}%`
 
           return (
-            <li>
+            <li key={skill.name}>
               <div className={styles.skillWrapper} title={`${skill.name}: ${skill.score} / 10`}>
                 <h3 className={ styles.skillTitle}>{skill.name}</h3>
                 <span className={ styles.skillRating } data-rating={skill.score}>
