@@ -3,12 +3,16 @@ import {FC} from 'react';
 import RhmImage from './RhmImage';
 import styles from '../styles/RhmImage.module.scss';
 
-const RhmFigure:FC = (props) => {
+interface RhmFigureProps {
+  props: {
+    children: [string],
+    className: string,
+  }
+}
+const RhmFigure:FC<RhmFigureProps> = (props) => {
   const { children } = props;
   const classNames = props.className.split(' ').map(className => styles[className]).join(' ');
-  const columns = props['data-cols'] ? `dataCols=${props['data-cols']}` : undefined;
 
-  // console.log(classNames);
   return (
     <figure className={classNames} data-columns={ props['data-cols'] }>
       { children.filter(el => {

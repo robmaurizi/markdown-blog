@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 import styles from '../styles/FeaturedImage.module.scss'
 
@@ -13,7 +14,7 @@ interface FeaturedImageProps {
 const FeaturedImage:FC<FeaturedImageProps> = ({image, classes}) => {
   return image ? (
     <figure className={`${ styles.featuredImage } ${ classes }`}>
-      <img src={image.url} alt={image.alt} />
+      <Image src={image.url} alt={image.alt} width="1440" height="900" />
     </figure>
   ) : <div className={`${ styles.featuredImage } ${ classes }`}></div>;
 }
