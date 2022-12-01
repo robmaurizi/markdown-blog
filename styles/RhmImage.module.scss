@@ -34,26 +34,32 @@
   gap: var(--grid-gutter);
   flex-wrap: wrap;
 
-  &[data-columns="2"] {
-    figure {
-      flex: 1 1 calc(50% - var(--grid-gutter));
-    }
-  }
-  &[data-columns="3"] {
-    figure {
-      flex: 1 1 calc(33% - var(--grid-gutter));
-    }
-  }
-  &[data-columns="3"] {
-    figure {
-      flex: 1 1 calc(25% - var(--grid-gutter));
-    }
-  }
-
   > figcaption {
+    font-family: var(--font-headline);
+    font-size: 75%;
+    opacity: .5;
+    text-align: center;
+    margin-top: .5em;
+
     justify-self: center;
     flex: 0 0 100%;
     max-width: 48rem;
     margin: 0 auto;
+  }
+}
+
+.gallery_2 {
+  figure {
+    flex: 1 1 calc(50% - var(--grid-gutter));
+  }
+}
+.gallery_3 {
+  figure {
+    flex: 1 1 calc(33% - var(--grid-gutter));
+  }
+}
+.gallery_4 {
+  figure {
+    flex: 1 1 calc(25% - var(--grid-gutter));
   }
 }

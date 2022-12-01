@@ -1,8 +1,10 @@
-import React from 'react';
+import {FC} from 'react'
 import ReactMarkdown from "react-markdown";
 import remarkUnwrapImages from "remark-unwrap-images";
 import rehypeRaw from "rehype-raw";
 
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 import Link from "next/link";
 import Head from 'next/head'
 
@@ -16,7 +18,26 @@ import RhmImage from '../../components/RhmImage';
 
 import styles from '../../styles/Post.module.scss'
 
-const Post = ({ content, frontmatter }) => {
+interface PostProps {
+  content: string,
+  frontmatter: {
+    tags: [string],
+    category: [string]
+    title: string,
+    publishDate: string,
+    description: string,
+    featuredImage: {
+      url: string,
+      alt: string
+    }
+  }
+}
+
+interface IParams extends ParsedUrlQuery {
+  slug: string
+}
+
+const Post:FC<PostProps> = ({ content, frontmatter }) => {
 
   const pageTitle = `${frontmatter.title} | Blog | Hypertext Jockey`;
 
@@ -34,9 +55,9 @@ const Post = ({ content, frontmatter }) => {
           <h1 className={styles.postTitle}>{frontmatter.title}</h1>
           <ReactMarkdown className={styles.postContent}
             components={{
-              img: ({node, ...props}) => <RhmImage {...props} />,
-              a: ({node, ...props}) => <Link {...props} />,
-              figure: ({node, ...props}) => <RhmFigure {...props} />
+              img: ({...props}) => <RhmImage src={props.src} alt={props.alt} />,
+              a: ({node, ...props}) => <Link href={props.href ? props.href : ''} {...props} />,
+              figure: ({node, className, children, ...props}) => <RhmFigure className={className} {...props}>{children}</RhmFigure>
             }}
             remarkPlugins={[[remarkUnwrapImages]]}
             rehypePlugins={[rehypeRaw]}
@@ -49,14 +70,15 @@ const Post = ({ content, frontmatter }) => {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
-  const post = await getSinglePost(params.slug, "content");
+export const getStaticProps:GetStaticProps = async ({ params }) => {
+  const { slug } = params as IParams;
+  const post = await getSinglePost(slug, "content");
   return {
     props: { ...post },
   };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
   const paths = getAllPosts("content").map( ({slug}) => ({params: {slug} }));
   return {
     paths,

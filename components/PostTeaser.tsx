@@ -10,14 +10,14 @@ interface PostTeaserProps {
   postSlug: string,
   postData: {
     title: string,
-    publishDate: string,
+    publishDate?: string,
     description: string,
-    featuredImage: {
+    featuredImage?: {
       url: string,
       alt: string
     }
   },
-  isHomeTeaser: boolean
+  isHomeTeaser?: boolean
 }
 
 const PostTeaser:FC<PostTeaserProps> = ( {postSlug, postData, isHomeTeaser=false} ) => {
@@ -46,7 +46,7 @@ const PostTeaser:FC<PostTeaserProps> = ( {postSlug, postData, isHomeTeaser=false
         </h1>
         { !isHomeTeaser && (
           <div className={styles.postByline}>
-            <PublishDate date={ postData.publishDate }/>
+            <PublishDate date={ postData.publishDate ? postData.publishDate : undefined }/>
           </div>
         ) }
         <div className={styles.postExcerpt}>

@@ -1,13 +1,33 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 import Head from 'next/head'
 import NavBar from '../../../components/Masthead';
 import BlogGrid from '../../../components/BlogGrid';
 import BlogHeader from '../../../components/BlogHeader';
 
-import styles from '../../../styles/Page.module.scss'
-
 import { getAllTermPosts, getTerms } from '../../../utils/lib'
 
-function Category({ posts, term }) {
+interface IParams extends ParsedUrlQuery {
+  category: string
+}
+
+type Props = {
+  posts: [{
+    slug: string,
+    frontmatter: {
+      title: string;
+      publishDate: string;
+      description: string;
+      featuredImage: {
+          url: string;
+          alt: string;
+      }     
+    }
+  }],
+  term: string
+}
+
+function Category({ posts, term }: Props) {
   term = term.replace(/-/g,' ');
   const pageTitle = `Posts categorized "${term}" | Hypertext Jockey`;
   return (
@@ -26,7 +46,7 @@ function Category({ posts, term }) {
   )
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
   const terms = await getTerms("content", "category");
   const paths = terms.map((category: string) => ({
     params: {
@@ -39,12 +59,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const posts = await getAllTermPosts("content", params.category, 'category');
+export const getStaticProps:GetStaticProps = async ({ params }) => {
+  const { category } = params as IParams;
+  const posts = await getAllTermPosts("content", category, 'category');
   return {
     props: { 
       posts,
-      term: params.category
+      term: category
      }
   };
 };

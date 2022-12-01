@@ -7,7 +7,52 @@ import Link from 'next/link'
 
 import NavBar from '../components/Masthead';
 
-interface ResumeProps {
+type ContactProps = {
+  contact: {
+    name: string,
+    location: string,
+    email: string,
+    urls: string[]
+  }
+}
+
+type ProfileProps = {
+  profile: string
+}
+
+type SkillsProps = {
+  skills: [{
+    name: string,
+    score: number,
+  }]
+}
+
+type ExperienceProps = {
+  experience: [
+    {
+      title: string,
+      years: string[],
+      description: string[],
+      skills: [{
+        name: string,
+        score: number,
+      }],
+    }
+  ]
+}
+
+type SampleProps = {
+  workSamples: [
+    {
+      title: string,
+      url: string,
+      year: string,
+      description: string,
+      tech: string[]
+    }
+  ]  
+}
+type ResumeProps = {
   resumeData: {
     contact: {
       name: string,
@@ -43,15 +88,15 @@ interface ResumeProps {
   }
 }
 
-const ContactBlock = ({contactInfo}) => {
+const ContactBlock = ({contact}:ContactProps) => {
   return (
     <section className={ styles.contact }>
-      <h1 className={styles.sectionHed}>{ contactInfo.name }</h1>
+      <h1 className={styles.sectionHed}>{ contact.name }</h1>
       <div>
-        <p>{ contactInfo.location }</p>
-        <p><a href={`mailto:${contactInfo.email}`}>{ contactInfo.email }</a></p>
+        <p>{ contact.location }</p>
+        <p><a href={`mailto:${contact.email}`}>{ contact.email }</a></p>
         <p>
-          { contactInfo.urls.map(url => {
+          { contact.urls.map(url => {
             return <span key={url}><Link href={`https://${url}`}>{ url }</Link><br /></span>
           }) }
         </p>
@@ -60,7 +105,7 @@ const ContactBlock = ({contactInfo}) => {
   );
 }
 
-const ProfileBlock = ({profile}) => {
+const ProfileBlock = ({profile}:ProfileProps) => {
   return (
     <section className={ styles.profile }>
       <h2 className={styles.sectionHed}>Profile</h2>
@@ -71,7 +116,7 @@ const ProfileBlock = ({profile}) => {
   )
 }
 
-const SkillsBlock = ({skills}) => {
+const SkillsBlock = ({skills}:SkillsProps) => {
 
   return (
     <section className={ styles.skills }>
@@ -104,7 +149,7 @@ const SkillsBlock = ({skills}) => {
   )
 }
 
-const ExperienceBlock = ({experience}) => {
+const ExperienceBlock = ({experience}:ExperienceProps) => {
   return (
     <section className={ styles.experience }>
       <h2 className={styles.sectionHed}>Experience</h2>
@@ -149,12 +194,12 @@ const ExperienceBlock = ({experience}) => {
   )
 }
 
-const SamplesBlock = ({samples}) => {
+const SamplesBlock = ({workSamples}:SampleProps) => {
   return (
     <section className={ styles.samples }>
       <h2 className={styles.sectionHed}>Work Samples</h2>
       <ul>
-        { samples.map(sample => {
+        { workSamples.map(sample => {
           return (
             <li key={sample.title}>
               <h3 className={ styles.itemHead }>
@@ -164,9 +209,7 @@ const SamplesBlock = ({samples}) => {
                 { sample.tech.map(tech => {
                   return (
                     <li key={tech}>
-                      {/* <i className={`icon devicon devicon-${tech}`} title={tech}> */}
-                        <Devicon name={tech} />
-                      {/* </i> */}
+                      <Devicon name={tech} />
                     </li>
                   )
               })}
@@ -192,11 +235,11 @@ const Resume:FC<ResumeProps> = ( {resumeData} ) => {
       </Head>
       <NavBar />
       <main className={ styles.container }>
-        <ContactBlock contactInfo={resumeData.contact} />
+        <ContactBlock contact={resumeData.contact} />
         <ProfileBlock profile={resumeData.profile} />
         <SkillsBlock skills={resumeData.skills} />
         <ExperienceBlock experience={resumeData.experience} />
-        <SamplesBlock samples={resumeData.workSamples} />
+        <SamplesBlock workSamples={resumeData.workSamples} />
       </main>
     </div>
   )

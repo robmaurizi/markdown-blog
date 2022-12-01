@@ -3,13 +3,15 @@ import {FC} from 'react';
 
 import styles from '../styles/RhmImage.module.scss';
 
-interface RhmImageProps {
-  src: string,
-  alt: string
+type RhmImageProps = {
+  src?: string,
+  alt?: string
 }
 
-const RhmImage:FC<RhmImageProps> = (props) => {
-  const { src, alt } = props;
+const RhmImage = ({src, alt}: RhmImageProps) => {
+  // const { src, alt } = props;
+  if (!src || !alt) return <></>;
+  
   let imgAtts = src.substring(src.indexOf('#!')).replace('#!','');
   const attributes = Object.fromEntries(imgAtts.split('&').map(att => att.split('=') ));
   // console.log(attributes);

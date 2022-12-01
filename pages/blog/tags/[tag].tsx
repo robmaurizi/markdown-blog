@@ -1,3 +1,5 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 import Head from 'next/head'
 import NavBar from '../../../components/Masthead';
 import BlogGrid from '../../../components/BlogGrid';
@@ -5,9 +7,29 @@ import BlogHeader from '../../../components/BlogHeader';
 
 import { getAllTermPosts, getTerms } from '../../../utils/lib'
 
-function Tags({ posts, term }) {
+interface IParams extends ParsedUrlQuery {
+  tag: string
+}
+
+type Props = {
+  posts: [{
+    slug: string,
+    frontmatter: {
+      title: string;
+      publishDate: string;
+      description: string;
+      featuredImage: {
+          url: string;
+          alt: string;
+      }     
+    }
+  }],
+  term: string
+}
+
+function Tag({ posts, term }: Props) {
   term = term.replace(/-/g,' ');
-  const pageTitle = `Posts tagged ${term} | Hypertext Jockey`;
+  const pageTitle = `Posts tagged "${term}" | Hypertext Jockey`;
   return (
     <div>
       <Head>
@@ -22,31 +44,31 @@ function Tags({ posts, term }) {
 
     </div>
   )
-
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
   const terms = await getTerms("content", "tags");
-  const paths = terms.map( (tag:string) => ({
-      params: {
-          tag,
-      }
+  const paths = terms.map((tag:string) => ({
+    params: {
+      tag,
+    }
   }));
   return {
-      paths,
-      fallback: false,
+    paths,
+    fallback: false,
   };
 };
 
-export const getStaticProps = async ({params}) => {
-    const posts = await getAllTermPosts("content", params.tag, 'tags');
-    return {
-        props: { 
-          posts, 
-          term: params.tag 
-        }
-    };
+export const getStaticProps:GetStaticProps = async ({ params }) => {
+  const { tag } = params as IParams;
+  const posts = await getAllTermPosts("content", tag, 'tags');
+  return {
+    props: { 
+      posts,
+      term: tag
+     }
+  };
 };
 
 
-export default Tags
+export default Tag

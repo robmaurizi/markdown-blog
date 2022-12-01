@@ -51,7 +51,7 @@ With the top mostly out of the way, it was time to turn my attention back to the
 
 However, I was still nervous about my mortises & tenons, especially since this was going to live outside—I felt the joints needed a little something extra to help hold them together. I found a scrap of nice straight-grained white oak in my wood pile and split and shaped some pegs. With those in hand, I bored some holes into the legs through the tenons, dropped some glue in, and drove my new wooden nails home. Very satisfying indeed!
 
-<figure class="gallery align_full" data-cols="3">
+<figure class="gallery align_full gallery_3">
 
   ![Split strips of white oak](/images/building-a-patio-table/IMG_6548-1536x2048.jpeg#!width=768&height=1024)
 
