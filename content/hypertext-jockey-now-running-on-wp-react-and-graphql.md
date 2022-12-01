@@ -11,7 +11,7 @@ tags:
 category:
   - technology
 featuredImage: {
-  url: /images/static/hypertext-jockey-now-running-on-wp-react-and-graphql/new-theme-thumb.png,
+  url: /images/hypertext-jockey-now-running-on-wp-react-and-graphql/new-theme-thumb.png,
   alt: 'An image representing React, GraphQL, and WordPress'
 }
 ---
