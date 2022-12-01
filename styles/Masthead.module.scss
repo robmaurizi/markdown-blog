@@ -1,0 +1,143 @@
+// @import './Common.scss';
+
+.mastheadContainer {
+  composes: pageContainer from './Page.module.scss';
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.siteTitle {
+  font-family: var(--font-headline);
+  font-weight: bold;
+  letter-spacing: -.03em;
+  margin: 0 0 .15em;
+  font-size: 2rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.siteDescription {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.masthead { 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.siteNavigation {
+  font-family: var(--font-headline);
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+@media screen and ( min-width: 480px) {
+  .siteNavigation {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .siteNavigation {
+    justify-content: flex-end;
+  }
+}
+
+.siteNavigationMenu {
+  list-style-type: none;
+  margin: 0 2em 0 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuItem {
+  margin-left: 2em;
+
+  a {
+    text-decoration: none;
+    transition: color .35s ease;
+
+    &:hover {
+      color: var(--color-highlight);
+    }
+  }
+}
+
+.menuItemActive {
+  composes: menuItem;
+
+  a {
+    color: var(--color-highlight);
+  }
+}
+
+
+.siteNavigationToggle {
+  display: none;
+}
+
+@media screen and ( max-width: 767px ) {
+
+  .siteNavigation {
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  .siteNavigationMenu {
+    justify-content: flex-start;
+    margin-right: 0;
+
+    .menuItem {
+      // flex-basis: calc((100%/3) + 20px);
+      margin: 0 40px 0 0;
+      &:last-child {
+          margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .siteNavigationMenu {
+    .menuItem {
+      margin: 0;
+    }
+  }
+
+  .siteNavigation {
+    .siteNavigationMenu {
+      width: 66.67%;
+      margin: 0;
+      justify-content: space-between;
+    }
+
+    .searchBox {
+      width: 66.67%;
+      justify-content: space-between;
+    }
+  
+  }
+}
+
+.siteNavigation {
+  .searchBox {
+    margin-top: 1em;
+    display: inline-flex;
+
+    @media screen and (min-width: 480px) {
+      margin-top: 0;
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.devicon {
+  display: inline-block;
+
+  svg {
+    display: block;
+    height: auto;
+    width: 1em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .devicon-wordpress {
+    path {
+      fill: rgba(var(--color-copy), .7);
+    }
+  }
+}

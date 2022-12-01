@@ -1,0 +1,13 @@
+.container {
+  composes: pageContainer from './Page.module.scss';
+  font-family: var(--font-headline);
+  padding-bottom: 0;
+  
+  h1 {
+    margin: 0;
+  }
+}
+
+.termName {
+  text-transform: capitalize;
+}

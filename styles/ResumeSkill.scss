@@ -1,0 +1,108 @@
+@import './Common.scss';
+@mixin skill_bkgd {
+    background-color: $color_highlight;
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: $dark_color_highlight;
+    }
+}
+
+.resume-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+
+    cursor: default;
+
+}
+
+.resume-skill-title {
+    flex-basis: 45%;
+    margin: 0;
+    font-weight: normal;
+    font-size: .9375rem;
+    padding-right: .5em;
+    word-wrap: nowrap;
+    white-space: nowrap;
+
+    &.item-head {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .resume-skill-title {
+        text-align: right;
+    }
+}
+
+.resume-skill-rating {
+    position: relative;
+    flex-basis: 55%;
+
+    .resume-skill-rating-text {
+        position: absolute;
+        display: block;
+        left: -9999em;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    i {
+        @include skill_bkgd();
+    }
+
+    &[data-rating="5"] {
+        i {
+            width: 100%;
+        }
+    }
+
+    &[data-rating="4"] {
+        i {
+            width: 80%;
+        }
+    }
+
+    &[data-rating="3"] {
+        i {
+            width: 60%;
+        }
+    }
+
+    &[data-rating="2"] {
+        i {
+            width: 40%;
+        }
+    }
+
+    &[data-rating="1"] {
+        i {
+            width: 20%;
+        }
+    }
+
+}
+
+.resume-skill-rating-graph {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: rgba($color_copy, .35);
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba($dark_color_copy, .35);
+    }
+
+    i {
+        display: block;
+        height: 5px;
+    }
+}

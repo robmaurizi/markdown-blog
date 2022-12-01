@@ -1,0 +1,97 @@
+.postTeaser {
+  height: 100%;
+  border-bottom: 1px solid;
+
+  @container (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gutter);
+    height: auto;
+    border: none;
+  }
+}
+
+.postTeaserContent {
+  font-size: 1.125rem;
+  line-height: 1.5;
+
+  @container (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.postTeaserImageContainer {
+  display: block;
+  margin-bottom: var(--grid-gutter);
+
+  @container (min-width: 768px) {
+    margin: 0;
+  }
+
+  > figure {
+    img {
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      filter: grayscale(0.75);
+      transition: filter .5s;
+
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+}
+
+.postEyebrow {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 2em;
+}
+
+.postTitle {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  margin: 0 0 .25em;
+
+  @container (min-width: 768px) {
+    margin: 0 0 1em;
+  }
+}
+
+.postReadMore {
+  text-align: right;
+}
+
+.postByline {
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.postExcerpt {
+  p {
+    margin-top: 0;
+  }
+}
+
+.emptyFeaturedImage {
+  background: rgba(34,34,34,.1);
+  position: relative;
+  aspect-ratio: 16/9;
+  margin-bottom: var(--grid-gutter);
+
+  &::after {
+    content: "Image TK";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-family: var(--font-headline);
+    opacity: .5;
+  }
+}

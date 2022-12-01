@@ -1,0 +1,31 @@
+$color_bg: rgb(255, 255, 255);
+$color_copy: rgb(34, 34, 34);
+$color_highlight: rgb(153, 0, 0);
+
+$font_headline: 'Helvetica Neue', sans-serif;
+$font_body: 'Hoefler Text', 'Garamond', serif;
+
+$dark_color_bg: $color_copy;
+$dark_color_copy: rgb(254, 254, 254, 0.9);
+$dark_color_highlight: rgb(255, 253, 149);
+
+:root {
+  --color-bg: #{$color_bg};
+  --color-copy: #{$color_copy};
+  --color-highlight: #{$color_highlight};
+  --font-headline: #{$font_headline};
+  --font-body: #{$font_body};
+
+  --grid-gutter: 24px;
+
+  @media (prefers-color-scheme: dark) {
+    --color-bg: #{$dark_color_bg};
+    --color-copy: #{$dark_color_copy};
+    --color-highlight: #{$dark_color_highlight};
+  }
+
+  @media container and (min-width: 768px) {
+    --grid-gutter: 32px;
+  }
+
+}

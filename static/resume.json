@@ -1,0 +1,323 @@
+{
+  "contact": {
+    "name": "Rob Maurizi",
+    "location": "Montclair, NJ USA 07042",
+    "email": "robert.maurizi@gmail.com",
+    "urls": [
+      "github.com/robmaurizi",
+      "robmaurizi.com"
+    ]
+  },
+  "profile": "I am a full-stack web developer with over 20 years experience across a diverse landscape of industries and proficiencies in many web technologies & frameworks including front-end (HTML/CSS/SCSS/JS), React, and the LAMP stack. I’m able to lead a project from conception through deployment, and I enjoy learning new skills and solving problems.",
+  "skills": [
+    {
+      "name": "HTML",
+      "score": 10
+    },
+    {
+      "name": "CSS",
+      "score": 10
+    },
+    {
+      "name": "Sass",
+      "score": 10
+    },
+    {
+      "name": "Javascript",
+      "score": 8
+    },
+    {
+      "name": "jQuery",
+      "score": 10
+    },
+    {
+      "name": "React",
+      "score": 7
+    },
+    {
+      "name": "Twig",
+      "score": 7
+    },
+    {
+      "name": "React Native",
+      "score": 5
+    },
+    {
+      "name": "PHP",
+      "score": 8
+    },
+    {
+      "name":"MySQL",
+      "score": 7
+    }, 
+    {
+      "name": "WordPress",
+      "score": 10
+    },
+    {
+      "name":"Drupal",
+      "score": 6
+    },
+    {
+      "name":"CraftCMS",
+      "score": 5
+    },
+    {
+      "name": "Git",
+      "score": 8
+    }
+  ],
+  "experience": [
+    {
+      "title": "Independent Contractor, RHM Interactive, Montclair, NJ",
+      "years": [
+        "2010",
+        "Present"
+      ],
+      "description": [
+        "Designed and developed WordPress and static websites for small- & medium-sized businesses",
+        "Contracted full-stack development services to other agencies for clients such as Cabela’s, Panasonic, Heineken USA, and Martha Stewart Living Omnimedia"
+      ],
+      "skills": [
+        {"name": "wordpress", "score": 20},
+        {"name": "html", "score": 20},
+        {"name": "javascript", "score": 15},
+        {"name": "php", "score": 15},
+        {"name": "css", "score": 10},
+        {"name": "sass", "score": 10},
+        {"name": "react", "score": 5},
+        {"name": "mysql", "score": 5}
+      ]
+    },
+    {
+      "title": "Sr. Front-End Developer, Memorial Sloan Kettering Cancer Center, New York, NY",
+      "years": [
+        "2021",
+        "Present"
+      ],
+      "description": [
+        "Maintain front-end codebase (Twig and React) for entire public-facing mskcc.org website within our design system",
+        "Help architect and develop new front-end components",
+        "Guide and mentor junior developers through pair-programming and peer code reviews"
+      ],
+      "skills": [
+        {"name": "html", "score": 20},
+        {"name": "sass", "score": 20},
+        {"name": "javascript", "score": 20},
+        {"name": "twig", "score": 15},
+        {"name": "react", "score": 15},
+        {"name": "php", "score": 10}
+      ]
+    },
+    {
+      "title": "Sr. Developer, Paper Tiger Design, Ridgewood, NJ",
+      "years": [
+        "2019",
+        "2020"
+      ],
+      "description": [
+        "Developed PHP-based integrations with WordPress and CraftCMS systems",
+        "Customized CMS for client needs based on content and editorial requirements"
+      ],
+      "skills": [
+        {"name": "wordpress", "score": 40},
+        {"name": "php", "score": 35},
+        {"name": "html", "score": 15},
+        {"name": "css", "score": 10}
+      ]
+    },   
+    {
+      "title": "Full-Stack Developer, Addison Design, New York, NY",
+      "years": [
+        "2017",
+        "2018"
+      ],
+      "description": [
+        "Developed client- and server-side for numerous WordPress sites, including custom themes and plugins",
+        "Developed static financial reporting sites for several clients"
+      ],
+      "skills": [
+        {"name": "wordpress", "score": 30},
+        {"name": "html", "score": 25},
+        {"name": "php", "score": 25},
+        {"name": "sass", "score": 10},
+        {"name": "javascript", "score": 10}
+      ]
+    },
+    {
+      "title": "HTML Team Lead, Martha Stweart Living Omnimedia, New York, NY",
+      "years": [
+        "2008",
+        "2010"
+      ],
+      "description": [
+        "Led front-end architecture for all MSLO web properties",
+        "Launched front-end re-design of MS Weddings online",
+        "Mentored teammates, providing guidance & feedback through code reviews"
+      ],
+      "skills": [
+        {"name": "html", "score": 50},
+        {"name": "css", "score": 30},
+        {"name": "javascript", "score": 20}
+      ]
+    },  
+    {
+      "title": "Front-End Architect, Ogilvy & Mather, New York, NY",
+      "years": [
+        "2008"
+      ],
+      "description": [
+        "Developed front-end code for client & brand micro-sites",
+        "Re-architected client sites to use web standards"
+      ],
+      "skills": [
+        {"name": "html", "score": 50},
+        {"name": "css", "score": 30},
+        {"name": "javascript", "score": 20}
+      ]
+    },
+    {
+      "title": "Sr. Interface Developer, Fry, Inc., New York, NY",
+      "years": [
+        "2006",
+        "2008"
+      ],
+      "description": [
+        "Developed & integrated front-end code for client e-commerce sites",
+        "Led front-end development for several redesign & rebranding efforts",
+        "Oversaw ADA-compliance initiatives for the Fry NYC office"
+      ],
+      "skills": [
+        {"name": "html", "score": 60},
+        {"name": "css", "score": 30},
+        {"name": "javascript", "score": 10}
+      ]
+    },
+    {
+      "title": "Sr. IT Professional, University of Vermont, Burlington, VT",
+      "years": [
+        "2001",
+        "2006"
+      ],
+      "description": [
+        "Developed numerous Flash-based games, simulations, and lab activities",
+        "Led front-end & back-end development on several campus website initiatives"
+      ],
+      "skills": [
+        {"name": "html", "score": 35},
+        {"name": "php", "score": 25},
+        {"name": "mysql", "score": 20},
+        {"name": "css", "score": 10},
+        {"name": "javascript", "score": 10}
+      ]
+    }
+  ],
+  "workSamples": [
+    {
+      "title": "MSKCC.org",
+      "url": "https://mskcc.org/",
+      "year": "2022",
+      "description": "Front-end development for the main mskcc.org website.",
+      "tech": [
+        "css",
+        "html",
+        "javascript",
+        "react",
+        "sass",
+        "twig"
+      ]
+    },
+    {
+      "title": "MedBase",
+      "url": "https://medbase-2c01c.web.app/",
+      "year": "2021",
+      "description": "React-based web app to track medications, based on original concept developed as Objective-C iOS app in 2011.",
+      "tech": [
+        "css",
+        "firebase",
+        "html",
+        "javascript",
+        "react",
+        "sass"
+      ]
+    },
+    {
+      "title": "3Pillar Global",
+      "url": "https://www.3pillarglobal.com/",
+      "year": "2020",
+      "description": "Full-stack development to support redesign & CMS architecture changes.",
+      "tech": [
+        "css",
+        "html",
+        "javascript",
+        "mysql",
+        "php",
+        "sass",
+        "wordpress"
+      ]
+    },
+    {
+      "title": "Bodhala",
+      "url": "https://www.bodhala.com/",
+      "year": "2020",
+      "description": "WordPress theme & plugin development to support redesign & CMS architecture changes",
+      "tech": [
+        "php",
+        "wordpress"
+      ]
+    },
+    {
+      "title": "APM Marketplace",
+      "url": "https://www.marketplace.org/",
+      "year": "2019",
+      "description": "Ported the Marketplace website from Drupal to WordPress.",
+      "tech": [
+        "html",
+        "mysql",
+        "php",
+        "wordpress"
+      ]
+    },
+    {
+      "title": "Axalta Racing",
+      "url": "https://axaltaracing.com/",
+      "year": "2019",
+      "description": "WordPress development to promote the Axalta Coatings racing team.",
+      "tech": [
+        "html",
+        "css",
+        "jquery",
+        "php",
+        "sass",
+        "wordpress"
+      ]
+    },
+    {
+      "title": "Continental Grain Corporation",
+      "url": "https://continentalgrain.com/",
+      "year": "2018",
+      "description": "Custom responsive WordPress theme based on provided Sketch comps.",
+      "tech": [
+        "html",
+        "css",
+        "jquery",
+        "php",
+        "sass",
+        "wordpress"
+      ]
+    },
+    {
+      "title": "Cabela's Mobile Website",
+      "url": "https://www.cabelas.com/",
+      "year": "2013",
+      "description": "Front-end JSP development based on provided PSD comps.",
+      "tech": [
+        "html",
+        "css",
+        "javascript",
+        "jquery",
+        "sass"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.postMeta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.postMetaList {
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
+.postMetaListTagged,
+.postMetaListCategorized {
+  composes: postMetaList;
+}

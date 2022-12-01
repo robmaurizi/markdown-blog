@@ -1,0 +1,9 @@
+.home-intro {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    @media screen and (min-width: 375px) {
+        padding: 0 1.5em;
+    }
+}
