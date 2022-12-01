@@ -5,7 +5,15 @@ import styles from '../styles/Blog.module.scss';
 interface BlogGridProps {
   posts: [{
     slug: string,
-    frontmatter: {}
+    frontmatter: {
+      title: string,
+      publishDate: string,
+      description: string,
+      featuredImage: {
+        url: string,
+        alt: string
+      }
+    }
   }]
 }
 
