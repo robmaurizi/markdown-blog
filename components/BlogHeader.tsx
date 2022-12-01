@@ -1,7 +1,12 @@
 import {FC} from 'react';
 import styles from '../styles/BlogHeader.module.scss';
 
-const BlogHeader = ({term, termType}) => {
+interface BlogHeaderProps {
+  term: string,
+  termType: string
+}
+
+const BlogHeader:FC<BlogHeaderProps> = ({term, termType}) => {
 
   return (
     <header className={styles.container}>
