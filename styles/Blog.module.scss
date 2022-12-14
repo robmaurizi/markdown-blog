@@ -1,7 +1,9 @@
 .blogContainer {
   composes: pageContainer from './Page.module.scss';
   
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--grid-gutter);
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gutter);
+  }
 }

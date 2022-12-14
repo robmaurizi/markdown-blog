@@ -1,6 +1,7 @@
 .postContainer {
   max-width: 48rem;
   margin: 0 auto;
+  composes: pageContainer from './Page.module.scss';
 }
 
 .postTitle {
